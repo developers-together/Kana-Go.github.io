@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
     </style>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Random Kana</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body style="margin:0px;">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="margin: 0px">
     <section class="header">
-        <img src="logo.png" alt="logo">
-        <h1>Random Kana</h1>
+      <img src="logo.png" alt="logo" />
+      <h1>Random Kana</h1>
     </section>
     <section class="body">
-        <div class="buttons">
-            <button id="hiragana">Hiragana</button>
-            <button id="katakana">Katakana</button>
-            <button id="romaji">Romaji</button>
+      <div class="buttons">
+        <button id="hiragana">Hiragana</button>
+        <button id="katakana">Katakana</button>
+        <button id="romaji">Romaji</button>
+      </div>
+      <div class="main" id="main">
+        <p>Click anywhere to randomize</p>
+        <div class="submain">
+          <blockquote id="letter"></blockquote>
+          <div id="answer"></div>
         </div>
-        <div class="main" id="main">
-            <p>Click anywhere to randomize</p>
-            <div class="submain">
-                <blockquote id="letter"></blockquote>
-                <div id="answer"></div>
-            </div>
-        </div>
+      </div>
     </section>
-    <div class="footer"></section>
-        Made by <pre> </pre> <a href="https://github.com/adhamhaithameid"> Adham  </a> <pre> </pre>and <pre> </pre><a href="https://github.com/Rouby-py">Rouby</a>
+    <div class="footer">
+      Made by
+      <pre></pre>
+      <a href="https://github.com/adhamhaithameid"> Adham </a>
+      <pre></pre>
+      and
+      <pre></pre>
+      <a href="https://github.com/Rouby-py">Rouby</a>
     </div>
-    
+
     <script type="module" src="script.js"></script>
-</body>
+  </body>
 </html>
