@@ -1,0 +1,136 @@
+::-webkit-scrollbar {
+  display: none;
+}
+.header {
+  user-select: none;
+  background-color:#181a1b;
+  width:100vw;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  display:flex;
+  color:rgb(197, 186, 186);
+  font-family:"Comic Neue";
+  font-size:25px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+.header img{
+  width:35px;
+  height:35px;
+  margin-right:20px;
+}
+.body{
+  background-color: #202325;
+  width:100vw;
+  height:84.6vh;
+
+}
+.buttons button{
+  align-items: center;
+  justify-content: center;
+  display:inline;
+  color:white;
+  border:none;
+  background-color: #191b1c;
+  border-radius: 15px;
+  width:100px;
+  height:45px;
+  margin: 0px 10px;
+  font-weight:900;
+  font-size:15px;
+  font-family:"Comic Neue";
+  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.buttons{
+  user-select: none;
+  width:100vw;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  display:flex;
+  padding-top:20px;
+
+}
+.buttons button:hover{
+  cursor:pointer;
+  background-color: #262a2b;
+  transition:ease 0.15s;
+}
+#hiragana.clicked{
+  background-color:#005397;
+  transition:none;
+}
+#katakana.clicked{
+  background-color:#005397;
+  transition:none;
+}
+#romaji.clicked{
+  background-color:#005397;
+  transition:none;
+}
+.main{
+  width:100vw;
+  height:70vh;
+  cursor:pointer;
+}
+.main p{
+  user-select: none;
+  color:rgb(197, 186, 186);
+  align-items: center;
+  justify-content: center;
+  display:flex;
+  font-family:"Comic Neue";
+  font-size: 19px;
+}
+.main blockquote{
+  margin:70px;
+  user-select: none;
+  color:white;
+  align-items: center;
+  justify-content: center;
+  display:flex;
+  font-size: 120px;
+}
+#answer{
+  color:transparent;
+  user-select: none;
+}
+#answer.shown{
+  transition:ease 0.2s;
+  text-align: center;
+  user-select: none;
+  padding-top:10px;
+  font-size:25px;
+  font-family:"Comic Neue";
+  color:white;
+  width:70px;
+  height:40px;
+  background-color: #1a4e00;
+  border-radius: 10px;
+  justify-content: center;
+  display:flex;
+  margin-top:-55px;
+  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.submain{
+  align-items: center;
+  justify-content: center;
+  place-items: center;
+}
+#letter{
+  transition: all ease 0.2s;
+  font-family: "Comic Neue";
+}
+.footer {
+  user-select: none;
+  background-color:#181a1b;
+  width:100vw;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  display:flex;
+  color:rgb(197, 186, 186);
+  font-family:"Comic Neue";
+  font-size:25px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
