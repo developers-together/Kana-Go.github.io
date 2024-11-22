@@ -138,6 +138,7 @@
   font-family: "Zen Maru Gothic";
 }
 .footer {
+  position: fixed;
   user-select: none;
   background-color: var(--base);
   width: 100vw;
