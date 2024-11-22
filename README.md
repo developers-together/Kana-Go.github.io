@@ -53,9 +53,3 @@ The app uses a pre-defined array of Kana characters from the `jpChars.js` file:
 
 - **Developers:** [Adham Haitham](https://github.com/adhamhaithameid) and [Rouby](https://github.com/Rouby-py)
 - **Fonts:** [Comfortaa](https://fonts.google.com/specimen/Comfortaa) & [Comic Neue](https://fonts.google.com/specimen/Comic+Neue) (via Google Fonts)
-
-## License
-
-This project is licensed under the **MIT License**. See the [LICENSE](./LICENSE) file for more details.
-
----
