@@ -121,7 +121,7 @@
   background-color: var(--buttons);
   border-radius: 10px;
   justify-content: center;
-  display: flex;
+  /* display: flex; */
   margin-top: -55px;
   box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 0.2);
 }
