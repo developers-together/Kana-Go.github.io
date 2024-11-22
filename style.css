@@ -116,12 +116,13 @@
   font-size: 25px;
   font-family: "Comic Neue";
   color: white;
-  width: 70px;
+  width: 15%;
   height: 40px;
   background-color: var(--buttons);
   border-radius: 10px;
-  /* justify-content: center; */
-  /* display: flex; */
+  justify-content: center;
+  display: flex;
+  margin: 0 auto;
   margin-top: -55px;
   box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 0.2);
 }
