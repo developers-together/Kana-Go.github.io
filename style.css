@@ -117,6 +117,7 @@
   font-family: "Comic Neue";
   color: white;
   width: 15%;
+  max-width: 75px;
   height: 40px;
   background-color: var(--buttons);
   border-radius: 10px;
