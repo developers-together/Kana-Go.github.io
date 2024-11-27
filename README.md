@@ -22,7 +22,7 @@
 - **JavaScript (ES6)**: Logic for character generation and user interaction.
 
 ## Live Demo
-Try it out [here]([https://developers-together/kana-Go.github.io/](https://developers-together.github.io/Kana-Go.github.io/)).
+Try it out [here](https://developers-together.github.io/Kana-Go.github.io/).
 
 ## Demo
 
