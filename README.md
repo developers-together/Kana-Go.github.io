@@ -2,7 +2,7 @@
 
 **Random Kana** is a simple and interactive web app that helps users learn and practice Japanese Kana (Hiragana, Katakana, and Romaji). The app randomizes characters, providing a fun way to test recognition skills and study Japanese writing systems.
 
-<img width="1440" alt="Random Kana UI" src="https://github.com/user-attachments/assets/6fba3bfc-6171-43e9-978c-ab6e67b235e4">
+<img width="1440" alt="Screenshot 2024-11-28 at 1 15 23 AM" src="https://github.com/user-attachments/assets/2eb2f9b9-d5a4-45ac-9a7a-cc6a7f2dd3e3">
 
 ## Features
 
