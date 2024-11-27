@@ -1,12 +1,16 @@
-# Random Kana
+<!--- ![License](https://img.shields.io/github/license/developers-together/Kana-Go.github.io) --->
+![Last Commit](https://img.shields.io/github/last-commit/developers-together/kana-Go.github.io)
 
-**Random Kana** is a simple and interactive web app that helps users learn and practice Japanese Kana (Hiragana, Katakana, and Romaji). The app randomizes characters, providing a fun way to test recognition skills and study Japanese writing systems.
+
+# Kana Go
+
+**Kana Go** is a simple and interactive web app that helps users learn and practice Japanese Kana (Hiragana, Katakana, and Romaji). The app randomizes characters, providing a fun way to test recognition skills and study Japanese writing systems.
 
 <img width="1440" alt="Screenshot 2024-11-28 at 1 15 23 AM" src="https://github.com/user-attachments/assets/2eb2f9b9-d5a4-45ac-9a7a-cc6a7f2dd3e3">
 
 ## Features
 
-- **Random Kana Display:** Click anywhere to generate a random character.
+- **Kana Go Display:** Click anywhere to generate a random character.
 - **Switch Between Systems:** Buttons to toggle between Hiragana, Katakana, and Romaji.
 - **Answer Reveal:** Click the main area to reveal the answer.
 - **Responsive Design:** Works seamlessly across devices with an elegant UI.
@@ -17,13 +21,16 @@
 - **CSS3**: Styling, including modern fonts and button effects.
 - **JavaScript (ES6)**: Logic for character generation and user interaction.
 
+## Live Demo
+Try it out [here]([https://developers-together/kana-Go.github.io/](https://developers-together.github.io/Kana-Go.github.io/)).
+
 ## Demo
 
 To see the app in action, follow these steps:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-repo/random-kana.git
+   git clone [https://github.com/your-repo/random-kana.git](https://github.com/developers-together/Kana-Go.github.io.git)
 2. Open the `index.html` file in your browser.
 
 ## File Structure
@@ -35,7 +42,7 @@ To see the app in action, follow these steps:
 - `logo.png`: Logo displayed in the header.
 - `Screenshot.png`: Screenshot of the UI for documentation.
 
-## Kana Logic
+## Kana Go Logic
 
 The app uses a pre-defined array of Kana characters from the `jpChars.js` file:
 
@@ -48,6 +55,10 @@ The app uses a pre-defined array of Kana characters from the `jpChars.js` file:
 2. Choose a writing system (Hiragana, Katakana, or Romaji).
 3. Click anywhere in the main area to generate a random character.
 4. Click again to reveal the answer.
+
+## Dependencies
+- None (Pure HTML, CSS, and JavaScript)
+
 
 ## Credits
 
