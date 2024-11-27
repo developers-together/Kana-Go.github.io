@@ -32,7 +32,8 @@ To see the app in action, follow these steps:
 
 1. Clone this repository:
    ```bash
-   git clone [https://github.com/your-repo/random-kana.git](https://github.com/developers-together/Kana-Go.github.io.git)
+   git clone https://github.com/developers-together/Kana-Go.github.io.git
+
 2. Open the `index.html` file in your browser.
 
 ## File Structure
