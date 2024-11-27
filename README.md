@@ -26,6 +26,8 @@ Try it out [here](https://developers-together.github.io/Kana-Go.github.io/).
 
 ## Demo
 
+Watch the full demo on [YouTube.](https://youtu.be/j7Q24oH5Apk)
+
 To see the app in action, follow these steps:
 
 1. Clone this repository:
