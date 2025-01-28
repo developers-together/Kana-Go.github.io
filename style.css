@@ -4,39 +4,56 @@
 
 :root {
   --base: #0f1919;
+  --BG: #505581;
   --buttons: #9191e9;
   --buttonsclicked: #30374d;
+  --text: rgb(197, 186, 186);
+}
+
+.html {
+  outline: none;
+  user-select: none;
 }
 
 .header {
   user-select: none;
   background-color: var(--base);
   width: 100vw;
-  height: 70px;
+  height: 10vh;
   align-items: center;
   justify-content: center;
   display: flex;
-  color: rgb(197, 186, 186);
+  color: var(--text);
   font-family: "Comic Neue";
   font-size: 25px;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
+
 .header img {
   width: 35px;
   height: 35px;
   margin-right: 20px;
 }
-.body {
-  background-color: #505581;
-  width: 100vw;
-  height: 84.6vh;
+
+.header a img {
+  position: absolute;
+  top: 2.5vh;
+  right: 2vw;
+  margin-right: 0px;
 }
+
+.body {
+  background-color: var(--BG);
+  width: 100vw;
+  height: 90vh;
+}
+
 .buttons button {
   align-items: center;
   justify-content: center;
-  display: inline;
+  display: flex;
   color: white;
-  border: none;
+  border: solid 0px #262a2b;
   background-color: var(--buttons);
   border-radius: 15px;
   width: 100px;
@@ -45,7 +62,6 @@
   font-weight: 900;
   font-size: 15px;
   font-family: "Comic Neue";
-  box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 0.2);
 }
 .buttons {
   user-select: none;
@@ -55,37 +71,39 @@
   justify-content: center;
   display: flex;
   padding-top: 20px;
+  transition: all 0.2s ease-in-out;
 }
+
 .buttons button:hover {
   cursor: pointer;
   background-color: #262a2b;
-  transition: ease 0.15s;
-  box-shadow: 2px 3px 0px 3px rgba(0, 0, 0, 0.2);
-}
-#hiragana.clicked {
-  background-color: var(--buttonsclicked);
-  transition: none;
-  box-shadow: none;
-  cursor: unset;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.05);
 }
 
-#katakana.clicked {
-  background-color: var(--buttonsclicked);
-  transition: none;
-  box-shadow: none;
-  cursor: unset;
+.buttons button:active {
+  transition: all 0.2s ease-in-out;
+  transform: scale(0.95);
 }
+
+#hiragana.clicked,
+#katakana.clicked,
 #romaji.clicked {
+  transition: all 0.2s ease-in-out;
   background-color: var(--buttonsclicked);
   transition: none;
   box-shadow: none;
   cursor: unset;
+  border: 0px;
+  transform: scale(1);
 }
+
 .main {
   width: 100vw;
-  height: 70vh;
+  height: 100%;
   cursor: pointer;
 }
+
 .main p {
   user-select: none;
   color: rgb(197, 186, 186);
@@ -95,6 +113,7 @@
   font-family: "Comic Neue";
   font-size: 19px;
 }
+
 .main blockquote {
   margin: 70px;
   user-select: none;
@@ -104,10 +123,12 @@
   display: flex;
   font-size: 120px;
 }
+
 #answer {
   color: transparent;
   user-select: none;
 }
+
 #answer.shown {
   transition: ease 0.2s;
   text-align: center;
@@ -128,30 +149,14 @@
   margin-top: -55px;
   box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 0.2);
 }
+
 .submain {
   align-items: center;
   justify-content: center;
   place-items: center;
 }
+
 #letter {
   transition: all ease 0.2s;
   font-family: "Zen Maru Gothic";
-}
-.footer {
-  position: fixed;
-  user-select: none;
-  background-color: var(--base);
-  width: 100vw;
-  height: 70px;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  color: rgb(197, 186, 186);
-  font-family: "Comic Neue";
-  font-size: 25px;
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
-}
-
-.footer a {
-  color: var(--buttons);
 }
