@@ -26,6 +26,7 @@
   color: var(--text);
   font-family: "Comic Neue";
   font-size: 25px;
+  transition: all 0.2s ease-in-out;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -42,10 +43,16 @@
   margin-right: 0px;
 }
 
+.header a img:hover {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.07);
+}
+
 .body {
   background-color: var(--BG);
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
 }
 
 .buttons button {
@@ -62,6 +69,7 @@
   font-weight: 900;
   font-size: 15px;
   font-family: "Comic Neue";
+  transition: all 0.2s ease-in-out;
 }
 .buttons {
   user-select: none;
@@ -100,7 +108,6 @@
 
 .main {
   width: 100vw;
-  height: 100%;
   cursor: pointer;
 }
 
