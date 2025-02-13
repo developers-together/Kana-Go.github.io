@@ -1,12 +1,20 @@
-<!--- ![License](https://img.shields.io/github/license/developers-together/Kana-Go.github.io) --->
-![Last Commit](https://img.shields.io/github/last-commit/developers-together/kana-Go.github.io)
+<!-- Badges -->
+![Last Commit](https://img.shields.io/github/last-commit/developers-together/Kana-Go.github.io) 
+![Top Language](https://img.shields.io/github/languages/top/developers-together/Kana-Go.github.io) 
+![Stars](https://img.shields.io/github/stars/developers-together/Kana-Go.github.io?style=social)
+
 
 
 # Kana Go
 
 **Kana Go** is a simple and interactive web app that helps users learn and practice Japanese Kana (Hiragana, Katakana, and Romaji). The app randomizes characters, providing a fun way to test recognition skills and study Japanese writing systems.
 
-<img width="1440" alt="Screenshot 2024-11-28 at 1 15 23 AM" src="https://github.com/user-attachments/assets/2eb2f9b9-d5a4-45ac-9a7a-cc6a7f2dd3e3">
+## Preview
+
+<p align="center">
+  <img width="70%" src="https://github.com/user-attachments/assets/3b93be6b-0aba-4369-be06-88292f64c57a">
+</p>
+
 
 ## Features
 
@@ -26,7 +34,7 @@ Try it out [here](https://developers-together.github.io/Kana-Go.github.io/).
 
 ## Demo
 
-Watch the full demo on [YouTube.](https://youtu.be/j7Q24oH5Apk)
+Watch the full demo on [YouTube.](https://youtu.be/x3q9771LkKM?si=utNBwbvaOiRXGR00)
 
 To see the app in action, follow these steps:
 
@@ -59,8 +67,9 @@ The app uses a pre-defined array of Kana characters from the `jpChars.js` file:
 3. Click anywhere in the main area to generate a random character.
 4. Click again to reveal the answer.
 
-## Dependencies
+## Requirements
 - None (Pure HTML, CSS, and JavaScript)
+
 
 
 ## Credits
