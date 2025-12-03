@@ -68,5 +68,3 @@ main.addEventListener("click", () => {
         }
     }
 })
-
-
