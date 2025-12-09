@@ -16,9 +16,15 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
+  /* Fallback for browsers that don't support dvh */
+  height: 100vh;
+  /* Use dvh to account for mobile address bars */
+  height: 100dvh;
   overflow: hidden;
   outline: none;
   user-select: none;
+  /* Prevent zoom on double tap on mobile */
+  touch-action: manipulation;
 }
 
 /* --- Header Styling --- */
@@ -27,11 +33,12 @@ html, body {
   background-color: var(--base);
   width: 100vw;
   height: 10vh;
+  min-height: 60px; /* Minimum clickable area */
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Pushes content apart */
-  padding: 0 2rem; /* Add horizontal padding */
-  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-sizing: border-box;
   color: var(--text);
   font-family: "Comic Neue";
   font-size: 25px;
@@ -39,15 +46,14 @@ html, body {
   position: relative;
 }
 
-/* Centers the H1 absolutely so it ignores the buttons on the right */
 .header h1 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
+  white-space: nowrap;
 }
 
-/* Empty spacer to balance layout if needed, though absolute H1 handles it */
 .spacer {
   width: 80px; 
 }
@@ -55,12 +61,11 @@ html, body {
 /* --- Social Icons Container --- */
 .socials {
   display: flex;
-  gap: 15px; /* Space between the two buttons */
+  gap: 15px;
   align-items: center;
   z-index: 10;
 }
 
-/* --- Unified Icon Button Styling --- */
 .icon-link {
   display: flex;
   align-items: center;
@@ -68,9 +73,11 @@ html, body {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.05); /* Subtle background */
+  background-color: rgba(255, 255, 255, 0.05);
   transition: all 0.2s ease-in-out;
   text-decoration: none;
+  /* Ensure tap target is large enough on mobile */
+  cursor: pointer;
 }
 
 .icon-link svg {
@@ -79,23 +86,19 @@ html, body {
   transition: transform 0.2s ease;
 }
 
-/* Specific styling for GitHub Icon color */
 .github svg {
   color: var(--text); 
 }
 
-/* Hover Effects */
 .icon-link:hover {
   background-color: rgba(255, 255, 255, 0.1);
   transform: scale(1.1);
-  cursor: pointer;
 }
 
 .github:hover svg {
   color: var(--text-hover);
 }
 
-/* BMC Specific override if you want to keep the yellow pop */
 .bmc:hover svg path[fill="#FFDD00"] {
   filter: brightness(1.2);
 }
@@ -104,7 +107,9 @@ html, body {
 .body {
   background-color: var(--BG);
   width: 100vw;
+  /* Adjust for header height */
   height: 90vh;
+  height: 90dvh;
   display: flex;
   flex-direction: column;
 }
@@ -112,12 +117,16 @@ html, body {
 .buttons {
   user-select: none;
   width: 100vw;
-  height: 70px;
+  /* Allow height to grow if buttons wrap */
+  min-height: 70px;
+  height: auto; 
   align-items: center;
   justify-content: center;
   display: flex;
   padding-top: 20px;
-  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+  flex-wrap: wrap; /* Allows wrapping on very tiny screens */
+  gap: 10px; /* Handles spacing when wrapped */
 }
 
 .buttons button {
@@ -128,13 +137,15 @@ html, body {
   border: solid 0px #262a2b;
   background-color: var(--buttons);
   border-radius: 15px;
-  width: 100px;
+  /* Fixed width on desktop, flexible on mobile */
+  width: 100px; 
   height: 45px;
-  margin: 0px 10px;
   font-weight: 900;
   font-size: 15px;
   font-family: "Comic Neue";
   transition: all 0.2s ease-in-out;
+  /* Remove default margins, use gap in container instead */
+  margin: 0; 
 }
 
 .buttons button:hover {
@@ -179,11 +190,12 @@ html, body {
 .main blockquote {
   user-select: none;
   color: white;
-  margin: 0; /* Reset browser default margin */
+  margin: 0;
   align-items: center;
   justify-content: center;
   display: flex;
-  font-size: 120px;
+  /* Clamp makes font responsive: min 80px, max 120px, depends on viewport */
+  font-size: clamp(80px, 25vw, 150px);
 }
 
 .submain {
@@ -192,6 +204,7 @@ html, body {
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+  width: 100%;
 }
 
 #answer {
@@ -207,7 +220,7 @@ html, body {
 #answer.shown {
   transition: ease 0.2s;
   text-align: center;
-  padding: 0 15px; /* Add horizontal padding for longer text */
+  padding: 0 15px;
   font-size: 25px;
   font-family: "Comic Neue";
   color: white;
@@ -219,4 +232,36 @@ html, body {
 #letter {
   transition: all ease 0.2s;
   font-family: "Zen Maru Gothic";
+}
+
+/* --- Mobile / Tablet Media Query --- */
+@media (max-width: 600px) {
+  .header {
+    padding: 0 1rem; /* Reduce padding */
+  }
+
+  .header h1 {
+    font-size: 2rem;
+    position: static; /* Remove absolute centering on mobile to prevent overlap */
+    transform: none;
+  }
+  
+  .spacer {
+    display: none; /* No need for spacer if absolute centering is gone */
+  }
+
+  .socials {
+    gap: 10px;
+  }
+  
+  .buttons {
+    padding: 15px 10px;
+  }
+  
+  .buttons button {
+    /* Make buttons share width evenly on mobile */
+    flex: 1;
+    min-width: 80px;
+    max-width: 120px;
+  }
 }
