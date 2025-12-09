@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; 
 }
 
 ::-webkit-scrollbar {
@@ -13,6 +13,21 @@
   --buttonsclicked: #30374d;
   --text: rgb(197, 186, 186);
   --text-hover: #ffffff;
+}
+
+body:focus-visible {
+  outline: none;
+}
+
+html:focus-visible {
+  outline: none;
+}
+
+button:focus-visible, 
+a:focus-visible,
+.main:focus-visible {
+  outline: none;
+  outline-offset: none;
 }
 
 html, body {
@@ -85,7 +100,7 @@ html, body {
   width: 24px;
   height: 24px;
   transition: transform 0.2s ease;
-  display: block;
+  display: block; 
 }
 
 .github svg {
@@ -130,7 +145,6 @@ html, body {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  
   align-items: center;
   justify-content: center;
   display: flex;
@@ -146,16 +160,22 @@ html, body {
   transition: all 0.2s ease-in-out;
   margin: 0;
   padding: 0;
+  box-shadow: 0px 4px 0px rgba(0,0,0,0.2);
 }
 
 .buttons button:hover {
   cursor: pointer;
   background-color: #262a2b;
-  transform: scale(1.05);
 }
 
 .buttons button:active {
   transform: scale(0.95);
+}
+
+.buttons button:active,
+.buttons button.clicked {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: 0px 1px 0px rgba(0,0,0,0.2);
 }
 
 #hiragana.clicked,
@@ -193,8 +213,17 @@ html, body {
   align-items: center;
   justify-content: center;
   display: flex;
-  font-size: 100px; 
+  font-size: 100px;
   font-size: clamp(80px, 25vw, 150px);
+}
+
+#letter {
+  font-family: "Zen Maru Gothic", sans-serif;
+}
+
+#letter.fade-out {
+  opacity: 0;
+  transform: scale(0.9);
 }
 
 .submain {
@@ -213,23 +242,37 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 10px; 
+  border: 2px dashed rgba(255, 255, 255, 0.1);
+}
+
+#answer.fade-out {
+  opacity: 0;
+  transform: scale(0.9);
 }
 
 #answer.shown {
-  transition: ease 0.2s;
   text-align: center;
   padding: 0 15px;
   font-size: 25px;
   font-family: "Comic Neue", sans-serif;
   color: white;
   background-color: var(--buttons);
-  border-radius: 10px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--buttons);
 }
 
-#letter {
-  transition: all ease 0.2s;
-  font-family: "Zen Maru Gothic", sans-serif;
+.main p, 
+#letter, 
+#answer {
+  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fade-out {
+  opacity: 0 !important;
+  transform: scale(0.9) !important;
 }
 
 @media (max-width: 600px) {

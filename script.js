@@ -6,12 +6,15 @@ let romajiButton = document.getElementById("romaji");
 const blockquote = document.getElementById('letter');
 const answer = document.getElementById('answer');
 let main = document.getElementById('main');
+const instructionText = document.querySelector('.main p');
 
 let ind = Math.floor(Math.random() * kanaList.length);
 
 document.addEventListener("DOMContentLoaded", () => {
     const savedMode = localStorage.getItem('kanaMode');
     
+    instructionText.textContent = "Click to reveal";
+
     if (savedMode === 'katakana') {
         katakanaButton.click();
     } else if (savedMode === 'romaji') {
@@ -28,6 +31,7 @@ hiraganaButton.addEventListener("click", () => {
         answer.classList.remove('shown');
         hiraganaButton.classList.toggle('clicked');
         blockquote.textContent = kanaList[ind][0];
+        instructionText.textContent = "Click to reveal";
     }
     katakanaButton.classList.remove('clicked');
     romajiButton.classList.remove('clicked');
@@ -40,6 +44,7 @@ katakanaButton.addEventListener("click", () => {
         answer.classList.remove('shown');
         katakanaButton.classList.toggle('clicked');
         blockquote.textContent = kanaList[ind][1];
+        instructionText.textContent = "Click to reveal";
     }
     hiraganaButton.classList.remove('clicked');
     romajiButton.classList.remove('clicked');
@@ -52,6 +57,7 @@ romajiButton.addEventListener("click", () => {
         answer.classList.remove('shown');
         romajiButton.classList.toggle('clicked');
         blockquote.textContent = kanaList[ind][2];
+        instructionText.textContent = "Click to reveal";
     }
     hiraganaButton.classList.remove('clicked');
     katakanaButton.classList.remove('clicked');
@@ -60,23 +66,42 @@ romajiButton.addEventListener("click", () => {
 main.addEventListener("click", () => {
     if(!answer.classList.contains('shown')){
         answer.classList.add('shown');
+        instructionText.textContent = "Click for next";
     }
     else{
-        answer.classList.remove('shown');
-        ind = Math.floor(Math.random() * kanaList.length);
-        
-        if(hiraganaButton.classList.contains('clicked')){   
-            blockquote.textContent = kanaList[ind][0];
-            answer.textContent = kanaList[ind][2];
-        }
-        else if(katakanaButton.classList.contains('clicked')){   
-            blockquote.textContent = kanaList[ind][1];
-            answer.textContent = kanaList[ind][2];
-        }
-        else{
-            blockquote.textContent = kanaList[ind][2];
-            answer.textContent = kanaList[ind][0] + " " + kanaList[ind][1];
-        }
+        blockquote.classList.add('fade-out');
+        answer.classList.add('fade-out');
+        instructionText.classList.add('fade-out');
+
+        setTimeout(() => {
+            ind = Math.floor(Math.random() * kanaList.length);
+            
+            answer.style.transition = 'none'; 
+            answer.classList.remove('shown');
+            
+            instructionText.textContent = "Click to reveal";
+
+            if(hiraganaButton.classList.contains('clicked')){   
+                blockquote.textContent = kanaList[ind][0];
+                answer.textContent = kanaList[ind][2];
+            }
+            else if(katakanaButton.classList.contains('clicked')){   
+                blockquote.textContent = kanaList[ind][1];
+                answer.textContent = kanaList[ind][2];
+            }
+            else{
+                blockquote.textContent = kanaList[ind][2];
+                answer.textContent = kanaList[ind][0] + " " + kanaList[ind][1];
+            }
+
+            void answer.offsetWidth; 
+
+            answer.style.transition = '';
+
+            blockquote.classList.remove('fade-out');
+            answer.classList.remove('fade-out');
+            instructionText.classList.remove('fade-out');
+        }, 100);
     }
 })
 
