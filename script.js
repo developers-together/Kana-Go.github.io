@@ -10,13 +10,20 @@ let main = document.getElementById('main');
 let ind = Math.floor(Math.random() * kanaList.length);
 
 document.addEventListener("DOMContentLoaded", () => {
-    blockquote.textContent = kanaList[ind][0];
-    answer.textContent = kanaList[ind][2];
-    hiraganaButton.classList.toggle('clicked');
+    const savedMode = localStorage.getItem('kanaMode');
+    
+    if (savedMode === 'katakana') {
+        katakanaButton.click();
+    } else if (savedMode === 'romaji') {
+        romajiButton.click();
+    } else {
+        hiraganaButton.click();
+    }
 });
 
 hiraganaButton.addEventListener("click", () => {
     if(!hiraganaButton.classList.contains('clicked')){
+        localStorage.setItem('kanaMode', 'hiragana');
         answer.textContent = kanaList[ind][2];
         answer.classList.remove('shown');
         hiraganaButton.classList.toggle('clicked');
@@ -28,6 +35,7 @@ hiraganaButton.addEventListener("click", () => {
 
 katakanaButton.addEventListener("click", () => {
     if(!katakanaButton.classList.contains('clicked')){
+        localStorage.setItem('kanaMode', 'katakana');
         answer.textContent = kanaList[ind][2];
         answer.classList.remove('shown');
         katakanaButton.classList.toggle('clicked');
@@ -39,6 +47,7 @@ katakanaButton.addEventListener("click", () => {
 
 romajiButton.addEventListener("click", () => {
     if(!romajiButton.classList.contains('clicked')){
+        localStorage.setItem('kanaMode', 'romaji');
         answer.textContent = kanaList[ind][0] + " " + kanaList[ind][1];
         answer.classList.remove('shown');
         romajiButton.classList.toggle('clicked');
