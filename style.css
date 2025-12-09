@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -15,32 +19,31 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
-  /* Fallback for browsers that don't support dvh */
   height: 100vh;
-  /* Use dvh to account for mobile address bars */
   height: 100dvh;
   overflow: hidden;
   outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
-  /* Prevent zoom on double tap on mobile */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
 
-/* --- Header Styling --- */
 .header {
-  user-select: none;
   background-color: var(--base);
   width: 100vw;
   height: 10vh;
-  min-height: 60px; /* Minimum clickable area */
+  min-height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  box-sizing: border-box;
   color: var(--text);
-  font-family: "Comic Neue";
+  font-family: "Comic Neue", sans-serif;
   font-size: 25px;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
   position: relative;
@@ -58,7 +61,6 @@ html, body {
   width: 80px; 
 }
 
-/* --- Social Icons Container --- */
 .socials {
   display: flex;
   gap: 15px;
@@ -76,7 +78,6 @@ html, body {
   background-color: rgba(255, 255, 255, 0.05);
   transition: all 0.2s ease-in-out;
   text-decoration: none;
-  /* Ensure tap target is large enough on mobile */
   cursor: pointer;
 }
 
@@ -84,6 +85,7 @@ html, body {
   width: 24px;
   height: 24px;
   transition: transform 0.2s ease;
+  display: block;
 }
 
 .github svg {
@@ -103,11 +105,9 @@ html, body {
   filter: brightness(1.2);
 }
 
-/* --- Body Styling --- */
 .body {
   background-color: var(--BG);
   width: 100vw;
-  /* Adjust for header height */
   height: 90vh;
   height: 90dvh;
   display: flex;
@@ -115,21 +115,22 @@ html, body {
 }
 
 .buttons {
-  user-select: none;
   width: 100vw;
-  /* Allow height to grow if buttons wrap */
   min-height: 70px;
   height: auto; 
   align-items: center;
   justify-content: center;
   display: flex;
   padding-top: 20px;
-  box-sizing: border-box;
-  flex-wrap: wrap; /* Allows wrapping on very tiny screens */
-  gap: 10px; /* Handles spacing when wrapped */
+  flex-wrap: wrap; 
+  gap: 10px; 
 }
 
 .buttons button {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
   align-items: center;
   justify-content: center;
   display: flex;
@@ -137,15 +138,14 @@ html, body {
   border: solid 0px #262a2b;
   background-color: var(--buttons);
   border-radius: 15px;
-  /* Fixed width on desktop, flexible on mobile */
   width: 100px; 
   height: 45px;
   font-weight: 900;
   font-size: 15px;
-  font-family: "Comic Neue";
+  font-family: "Comic Neue", sans-serif;
   transition: all 0.2s ease-in-out;
-  /* Remove default margins, use gap in container instead */
-  margin: 0; 
+  margin: 0;
+  padding: 0;
 }
 
 .buttons button:hover {
@@ -177,24 +177,23 @@ html, body {
   align-items: center;
   justify-content: start;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .main p {
-  user-select: none;
   color: rgb(197, 186, 186);
-  font-family: "Comic Neue";
+  font-family: "Comic Neue", sans-serif;
   font-size: 19px;
   margin-top: 10px;
 }
 
 .main blockquote {
-  user-select: none;
   color: white;
   margin: 0;
   align-items: center;
   justify-content: center;
   display: flex;
-  /* Clamp makes font responsive: min 80px, max 120px, depends on viewport */
+  font-size: 100px; 
   font-size: clamp(80px, 25vw, 150px);
 }
 
@@ -209,7 +208,6 @@ html, body {
 
 #answer {
   color: transparent;
-  user-select: none;
   min-width: 60px;
   height: 40px;
   display: flex;
@@ -222,7 +220,7 @@ html, body {
   text-align: center;
   padding: 0 15px;
   font-size: 25px;
-  font-family: "Comic Neue";
+  font-family: "Comic Neue", sans-serif;
   color: white;
   background-color: var(--buttons);
   border-radius: 10px;
@@ -231,23 +229,22 @@ html, body {
 
 #letter {
   transition: all ease 0.2s;
-  font-family: "Zen Maru Gothic";
+  font-family: "Zen Maru Gothic", sans-serif;
 }
 
-/* --- Mobile / Tablet Media Query --- */
 @media (max-width: 600px) {
   .header {
-    padding: 0 1rem; /* Reduce padding */
+    padding: 0 1rem;
   }
 
   .header h1 {
-    font-size: 2rem;
-    position: static; /* Remove absolute centering on mobile to prevent overlap */
+    font-size: 1.2rem;
+    position: static;
     transform: none;
   }
   
   .spacer {
-    display: none; /* No need for spacer if absolute centering is gone */
+    display: none;
   }
 
   .socials {
@@ -259,7 +256,6 @@ html, body {
   }
   
   .buttons button {
-    /* Make buttons share width evenly on mobile */
     flex: 1;
     min-width: 80px;
     max-width: 120px;
