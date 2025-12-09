@@ -1,0 +1,21 @@
+{
+  "name": "Kana Go",
+  "short_name": "Kana Go",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#505581",
+  "theme_color": "#0f1919",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

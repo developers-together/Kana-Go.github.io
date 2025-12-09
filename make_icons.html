@@ -1,0 +1,51 @@
+<!-- i am too lazy to make a design on figma so i made this 🥱 -->
+<!-- i will delete it later on (if i remembered) 🥱 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Icon Generator</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
+        body { font-family: 'Comfortaa', sans-serif; background: #222; color: #fff; text-align: center; padding-top: 50px; }
+    </style>
+</head>
+<body>
+    <h1>Generating Icons...</h1>
+    <p>Please allow downloads if prompted.</p>
+    
+    <canvas id="c192" width="192" height="192" style="display:none"></canvas>
+    <canvas id="c512" width="512" height="512" style="display:none"></canvas>
+
+    <script>
+        document.fonts.ready.then(function () {
+            const sizes = [192, 512];
+            const bgColor = "#505581";
+            const textColor = "#ffffff";
+            const textContent = "K | か";
+
+            sizes.forEach(size => {
+                const canvas = document.getElementById('c' + size);
+                const ctx = canvas.getContext('2d');
+
+                ctx.fillStyle = bgColor;
+                ctx.fillRect(0, 0, size, size);
+
+                ctx.fillStyle = textColor;
+                ctx.font = `bold ${size / 4}px 'Comfortaa', sans-serif`; 
+                ctx.textAlign = "center";
+                ctx.textBaseline = "middle";
+                ctx.fillText(textContent, size / 2, size / 2);
+
+                const link = document.createElement('a');
+                link.download = `icon-${size}.png`;
+                link.href = canvas.toDataURL("image/png");
+                link.click();
+            });
+
+            document.querySelector("h1").innerText = "Done! Check your downloads.";
+        });
+    </script>
+</body>
+</html>
